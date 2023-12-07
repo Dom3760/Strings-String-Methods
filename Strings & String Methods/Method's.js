@@ -1,19 +1,12 @@
-length("Hello")
-function length(string)
-{
-    var counter = 0
-    let i = 0
-    while(i<string.length){
-        counter++;
-        i++
-    }
+function length(string) {
+  var counter = 0;
+  let i = 0;
 
-    return counter;
-    // for(let i = 0 ; i<string.length; i++)
-    // {
-    //     counter ++
-    // }
-    console.log(counter)
+  while (string[i]) {
+    counter++;
+    i++;
+  }
+  return (counter);
 }
 
 slice(0,5)
@@ -24,7 +17,7 @@ function slice (num1,num2)
     console.log(sliced)
 }
 
-//Replaces one charcater, the first match
+//Replaces one charcater, the first matched character
 
 //replace("l", "s")
 //Heslo
@@ -32,7 +25,7 @@ replace("l", "s");
 function replace(replace, char) 
 {
     var string = "Hello";
-    for(let i = 0; i< length(string) ; i++)
+    for(let i = 0; i<string.length; i++)
     {
         if(string[i] === replace)
         {
@@ -59,6 +52,7 @@ function replaceAll (replace, char)
     console.log(string)
 }
 
+//merges the two strings together; concatanates the two strings.
 concat("Yes","Sirrrrrr!")
 function concat (string1,string2) 
 {
@@ -66,6 +60,7 @@ function concat (string1,string2)
     console.log(newString)
 }
 
+//gets the character at the selected index
 charAt (2)
 function charAt (number)
 {
