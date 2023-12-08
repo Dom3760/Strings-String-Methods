@@ -1,3 +1,5 @@
+// counts the length of a string or arrary that is entered into function
+console.log(length("YesSir!"))
 function length(string) {
   var counter = 0;
   let i = 0;
@@ -9,61 +11,85 @@ function length(string) {
   return (counter);
 }
 
-slice(0,5)
+console.log(slice(0,5))
 function slice (num1,num2)
 {
     var string = "Hello World"
     var sliced = string.substring(num1, num2)
-    console.log(sliced)
+    return (sliced);
 }
 
 //Replaces one charcater, the first matched character
-
 //replace("l", "s")
 //Heslo
-replace("l", "s");
-function replace(replace, char) 
+console.log(replace("l", "s", "Hello"));
+function replace(replace, char, word) 
 {
-    var string = "Hello";
-    for(let i = 0; i<string.length; i++)
+    let newString ="";
+    let index = -1;
+    //var string = "Hello";
+    for(let i = 0; i<length(word); i++)
     {
-        if(string[i] === replace)
+        if(word[i] === replace)
         {
-            string[i] = char
-            break
+            index = i;
+            break;
         }
     }
-    console.log(string)
+
+    for(let i = 0; i < length(word); i++){
+        if(i === index){
+            newString += char;
+        }
+        else{
+            newString += word.charAt(i);
+        }
+    }
+
+    return newString;
 }
+
+
 
 //Replaces all matching charcaters in the string
 //Hesso
-replaceAll("l","s")
-function replaceAll (replace, char)
+console.log(replaceAll("l","s","Hello"))
+function replaceAll (replace, char, word)
 {
-    var string = "Hello";
-    for(let i = 0; i<length(string); i++)
+    let newString ="";
+    let index = []
+    for(let i = 0; i<length(word); i++)
     {
-        if(string[i] === replace)
+        if(word[i] === replace)
         {
-            string[i] = char
+            index.push(i)
         }
     }
-    console.log(string)
+
+    for(let i = 0; i < length(word); i++){
+        if (index.includes(i)) 
+        {
+            newString += char;
+        } else 
+        {
+            newString += word.charAt(i);
+        }
+    }
+
+    return newString;
 }
 
 //merges the two strings together; concatanates the two strings.
-concat("Yes","Sirrrrrr!")
+console.log(concat("Yes","Sirrrrrr!"))
 function concat (string1,string2) 
 {
     var newString = string1+string2
-    console.log(newString)
+    return (newString);
 }
 
 //gets the character at the selected index
-charAt (2)
-function charAt (number)
+console.log(charAt ("yes sir",2))
+function charAt (word,number)
 {
-    var word = "yes sir"
-    console.log(word[number])
+    return(word[number]);
 }
